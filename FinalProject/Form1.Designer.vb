@@ -38,6 +38,11 @@ Partial Class Form1
         Me.DepartmentToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvItems = New System.Windows.Forms.DataGridView()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.chkbxCatagory = New System.Windows.Forms.CheckBox()
+        Me.chkbxDepartment = New System.Windows.Forms.CheckBox()
+        Me.cboCatagorySelect = New System.Windows.Forms.ComboBox()
+        Me.cboDepartmentSelect = New System.Windows.Forms.ComboBox()
         Me.UPCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InventoryCountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PurchasePriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -49,11 +54,6 @@ Partial Class Form1
         Me.SaleObjectBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProjectDatabaseDataSet = New FinalProject.ProjectDatabaseDataSet()
         Me.SaleObjectTableAdapter = New FinalProject.ProjectDatabaseDataSetTableAdapters.SaleObjectTableAdapter()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.chkbxCatagory = New System.Windows.Forms.CheckBox()
-        Me.chkbxDepartment = New System.Windows.Forms.CheckBox()
-        Me.cboCatagorySelect = New System.Windows.Forms.ComboBox()
-        Me.cboDepartmentSelect = New System.Windows.Forms.ComboBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvItems, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SaleObjectBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,19 +80,19 @@ Partial Class Form1
         'ItemToolStripMenuItem
         '
         Me.ItemToolStripMenuItem.Name = "ItemToolStripMenuItem"
-        Me.ItemToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
+        Me.ItemToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ItemToolStripMenuItem.Text = "Item"
         '
         'CatagoryToolStripMenuItem
         '
         Me.CatagoryToolStripMenuItem.Name = "CatagoryToolStripMenuItem"
-        Me.CatagoryToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
+        Me.CatagoryToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CatagoryToolStripMenuItem.Text = "Catagory"
         '
         'DepartmentToolStripMenuItem
         '
         Me.DepartmentToolStripMenuItem.Name = "DepartmentToolStripMenuItem"
-        Me.DepartmentToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
+        Me.DepartmentToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.DepartmentToolStripMenuItem.Text = "Department"
         '
         'EditToolStripMenuItem
@@ -170,82 +170,6 @@ Partial Class Form1
         Me.dgvItems.Size = New System.Drawing.Size(954, 482)
         Me.dgvItems.TabIndex = 2
         '
-        'UPCDataGridViewTextBoxColumn
-        '
-        Me.UPCDataGridViewTextBoxColumn.DataPropertyName = "UPC"
-        Me.UPCDataGridViewTextBoxColumn.FillWeight = 110.0!
-        Me.UPCDataGridViewTextBoxColumn.HeaderText = "UPC"
-        Me.UPCDataGridViewTextBoxColumn.Name = "UPCDataGridViewTextBoxColumn"
-        Me.UPCDataGridViewTextBoxColumn.Width = 110
-        '
-        'InventoryCountDataGridViewTextBoxColumn
-        '
-        Me.InventoryCountDataGridViewTextBoxColumn.DataPropertyName = "InventoryCount"
-        Me.InventoryCountDataGridViewTextBoxColumn.FillWeight = 110.0!
-        Me.InventoryCountDataGridViewTextBoxColumn.HeaderText = "Inventory Count"
-        Me.InventoryCountDataGridViewTextBoxColumn.Name = "InventoryCountDataGridViewTextBoxColumn"
-        Me.InventoryCountDataGridViewTextBoxColumn.Width = 110
-        '
-        'PurchasePriceDataGridViewTextBoxColumn
-        '
-        Me.PurchasePriceDataGridViewTextBoxColumn.DataPropertyName = "PurchasePrice"
-        Me.PurchasePriceDataGridViewTextBoxColumn.FillWeight = 110.0!
-        Me.PurchasePriceDataGridViewTextBoxColumn.HeaderText = "Purchase Price"
-        Me.PurchasePriceDataGridViewTextBoxColumn.Name = "PurchasePriceDataGridViewTextBoxColumn"
-        Me.PurchasePriceDataGridViewTextBoxColumn.Width = 110
-        '
-        'MarkupMarginDataGridViewTextBoxColumn
-        '
-        Me.MarkupMarginDataGridViewTextBoxColumn.DataPropertyName = "MarkupMargin"
-        Me.MarkupMarginDataGridViewTextBoxColumn.FillWeight = 110.0!
-        Me.MarkupMarginDataGridViewTextBoxColumn.HeaderText = "Mark-up Margin"
-        Me.MarkupMarginDataGridViewTextBoxColumn.Name = "MarkupMarginDataGridViewTextBoxColumn"
-        Me.MarkupMarginDataGridViewTextBoxColumn.Width = 110
-        '
-        'YearEndTotalSalesDataGridViewTextBoxColumn
-        '
-        Me.YearEndTotalSalesDataGridViewTextBoxColumn.DataPropertyName = "YearEndTotalSales"
-        Me.YearEndTotalSalesDataGridViewTextBoxColumn.FillWeight = 150.0!
-        Me.YearEndTotalSalesDataGridViewTextBoxColumn.HeaderText = "Year End Total Sales"
-        Me.YearEndTotalSalesDataGridViewTextBoxColumn.Name = "YearEndTotalSalesDataGridViewTextBoxColumn"
-        Me.YearEndTotalSalesDataGridViewTextBoxColumn.Width = 150
-        '
-        'ClaimsCountDataGridViewTextBoxColumn
-        '
-        Me.ClaimsCountDataGridViewTextBoxColumn.DataPropertyName = "ClaimsCount"
-        Me.ClaimsCountDataGridViewTextBoxColumn.FillWeight = 110.0!
-        Me.ClaimsCountDataGridViewTextBoxColumn.HeaderText = "Claims Count"
-        Me.ClaimsCountDataGridViewTextBoxColumn.Name = "ClaimsCountDataGridViewTextBoxColumn"
-        Me.ClaimsCountDataGridViewTextBoxColumn.Width = 110
-        '
-        'DepartmentIdDataGridViewTextBoxColumn
-        '
-        Me.DepartmentIdDataGridViewTextBoxColumn.DataPropertyName = "DepartmentId"
-        Me.DepartmentIdDataGridViewTextBoxColumn.FillWeight = 110.0!
-        Me.DepartmentIdDataGridViewTextBoxColumn.HeaderText = "Department"
-        Me.DepartmentIdDataGridViewTextBoxColumn.Name = "DepartmentIdDataGridViewTextBoxColumn"
-        Me.DepartmentIdDataGridViewTextBoxColumn.Width = 110
-        '
-        'CatagoryIdDataGridViewTextBoxColumn
-        '
-        Me.CatagoryIdDataGridViewTextBoxColumn.DataPropertyName = "CatagoryId"
-        Me.CatagoryIdDataGridViewTextBoxColumn.HeaderText = "Catagory"
-        Me.CatagoryIdDataGridViewTextBoxColumn.Name = "CatagoryIdDataGridViewTextBoxColumn"
-        '
-        'SaleObjectBindingSource
-        '
-        Me.SaleObjectBindingSource.DataMember = "SaleObject"
-        Me.SaleObjectBindingSource.DataSource = Me.ProjectDatabaseDataSet
-        '
-        'ProjectDatabaseDataSet
-        '
-        Me.ProjectDatabaseDataSet.DataSetName = "ProjectDatabaseDataSet"
-        Me.ProjectDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'SaleObjectTableAdapter
-        '
-        Me.SaleObjectTableAdapter.ClearBeforeFill = True
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -290,6 +214,90 @@ Partial Class Form1
         Me.cboDepartmentSelect.Name = "cboDepartmentSelect"
         Me.cboDepartmentSelect.Size = New System.Drawing.Size(65, 21)
         Me.cboDepartmentSelect.TabIndex = 7
+        '
+        'UPCDataGridViewTextBoxColumn
+        '
+        Me.UPCDataGridViewTextBoxColumn.DataPropertyName = "UPC"
+        Me.UPCDataGridViewTextBoxColumn.FillWeight = 110.0!
+        Me.UPCDataGridViewTextBoxColumn.HeaderText = "UPC"
+        Me.UPCDataGridViewTextBoxColumn.Name = "UPCDataGridViewTextBoxColumn"
+        Me.UPCDataGridViewTextBoxColumn.ReadOnly = True
+        Me.UPCDataGridViewTextBoxColumn.Width = 110
+        '
+        'InventoryCountDataGridViewTextBoxColumn
+        '
+        Me.InventoryCountDataGridViewTextBoxColumn.DataPropertyName = "InventoryCount"
+        Me.InventoryCountDataGridViewTextBoxColumn.FillWeight = 110.0!
+        Me.InventoryCountDataGridViewTextBoxColumn.HeaderText = "Inventory Count"
+        Me.InventoryCountDataGridViewTextBoxColumn.Name = "InventoryCountDataGridViewTextBoxColumn"
+        Me.InventoryCountDataGridViewTextBoxColumn.ReadOnly = True
+        Me.InventoryCountDataGridViewTextBoxColumn.Width = 110
+        '
+        'PurchasePriceDataGridViewTextBoxColumn
+        '
+        Me.PurchasePriceDataGridViewTextBoxColumn.DataPropertyName = "PurchasePrice"
+        Me.PurchasePriceDataGridViewTextBoxColumn.FillWeight = 110.0!
+        Me.PurchasePriceDataGridViewTextBoxColumn.HeaderText = "Purchase Price"
+        Me.PurchasePriceDataGridViewTextBoxColumn.Name = "PurchasePriceDataGridViewTextBoxColumn"
+        Me.PurchasePriceDataGridViewTextBoxColumn.ReadOnly = True
+        Me.PurchasePriceDataGridViewTextBoxColumn.Width = 110
+        '
+        'MarkupMarginDataGridViewTextBoxColumn
+        '
+        Me.MarkupMarginDataGridViewTextBoxColumn.DataPropertyName = "MarkupMargin"
+        Me.MarkupMarginDataGridViewTextBoxColumn.FillWeight = 110.0!
+        Me.MarkupMarginDataGridViewTextBoxColumn.HeaderText = "Mark-up Margin"
+        Me.MarkupMarginDataGridViewTextBoxColumn.Name = "MarkupMarginDataGridViewTextBoxColumn"
+        Me.MarkupMarginDataGridViewTextBoxColumn.ReadOnly = True
+        Me.MarkupMarginDataGridViewTextBoxColumn.Width = 110
+        '
+        'YearEndTotalSalesDataGridViewTextBoxColumn
+        '
+        Me.YearEndTotalSalesDataGridViewTextBoxColumn.DataPropertyName = "YearEndTotalSales"
+        Me.YearEndTotalSalesDataGridViewTextBoxColumn.FillWeight = 150.0!
+        Me.YearEndTotalSalesDataGridViewTextBoxColumn.HeaderText = "Year End Total Sales"
+        Me.YearEndTotalSalesDataGridViewTextBoxColumn.Name = "YearEndTotalSalesDataGridViewTextBoxColumn"
+        Me.YearEndTotalSalesDataGridViewTextBoxColumn.ReadOnly = True
+        Me.YearEndTotalSalesDataGridViewTextBoxColumn.Width = 150
+        '
+        'ClaimsCountDataGridViewTextBoxColumn
+        '
+        Me.ClaimsCountDataGridViewTextBoxColumn.DataPropertyName = "ClaimsCount"
+        Me.ClaimsCountDataGridViewTextBoxColumn.FillWeight = 110.0!
+        Me.ClaimsCountDataGridViewTextBoxColumn.HeaderText = "Claims Count"
+        Me.ClaimsCountDataGridViewTextBoxColumn.Name = "ClaimsCountDataGridViewTextBoxColumn"
+        Me.ClaimsCountDataGridViewTextBoxColumn.ReadOnly = True
+        Me.ClaimsCountDataGridViewTextBoxColumn.Width = 110
+        '
+        'DepartmentIdDataGridViewTextBoxColumn
+        '
+        Me.DepartmentIdDataGridViewTextBoxColumn.DataPropertyName = "DepartmentId"
+        Me.DepartmentIdDataGridViewTextBoxColumn.FillWeight = 110.0!
+        Me.DepartmentIdDataGridViewTextBoxColumn.HeaderText = "Department"
+        Me.DepartmentIdDataGridViewTextBoxColumn.Name = "DepartmentIdDataGridViewTextBoxColumn"
+        Me.DepartmentIdDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DepartmentIdDataGridViewTextBoxColumn.Width = 110
+        '
+        'CatagoryIdDataGridViewTextBoxColumn
+        '
+        Me.CatagoryIdDataGridViewTextBoxColumn.DataPropertyName = "CatagoryId"
+        Me.CatagoryIdDataGridViewTextBoxColumn.HeaderText = "Catagory"
+        Me.CatagoryIdDataGridViewTextBoxColumn.Name = "CatagoryIdDataGridViewTextBoxColumn"
+        Me.CatagoryIdDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'SaleObjectBindingSource
+        '
+        Me.SaleObjectBindingSource.DataMember = "SaleObject"
+        Me.SaleObjectBindingSource.DataSource = Me.ProjectDatabaseDataSet
+        '
+        'ProjectDatabaseDataSet
+        '
+        Me.ProjectDatabaseDataSet.DataSetName = "ProjectDatabaseDataSet"
+        Me.ProjectDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'SaleObjectTableAdapter
+        '
+        Me.SaleObjectTableAdapter.ClearBeforeFill = True
         '
         'Form1
         '

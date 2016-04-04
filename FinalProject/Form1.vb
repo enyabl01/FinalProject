@@ -5,4 +5,7 @@
 
     End Sub
 
+    Private Sub ItemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ItemToolStripMenuItem.Click
+        AddItem.ShowDialog()
+    End Sub
 End Class
