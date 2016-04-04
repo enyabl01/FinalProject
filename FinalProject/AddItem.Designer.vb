@@ -104,7 +104,7 @@ Partial Class AddItem
         '
         'btnCancel
         '
-        Me.btnCancel.Location = New System.Drawing.Point(99, 217)
+        Me.btnCancel.Location = New System.Drawing.Point(99, 308)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(75, 28)
         Me.btnCancel.TabIndex = 8
@@ -113,7 +113,7 @@ Partial Class AddItem
         '
         'btnSave
         '
-        Me.btnSave.Location = New System.Drawing.Point(193, 217)
+        Me.btnSave.Location = New System.Drawing.Point(193, 308)
         Me.btnSave.Name = "btnSave"
         Me.btnSave.Size = New System.Drawing.Size(75, 28)
         Me.btnSave.TabIndex = 9
@@ -123,7 +123,7 @@ Partial Class AddItem
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.lblStatus})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 258)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 370)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(332, 22)
         Me.StatusStrip1.TabIndex = 10
@@ -138,7 +138,7 @@ Partial Class AddItem
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(332, 280)
+        Me.ClientSize = New System.Drawing.Size(332, 392)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.btnSave)
         Me.Controls.Add(Me.btnCancel)
