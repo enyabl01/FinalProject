@@ -38,11 +38,6 @@ Partial Class Form1
         Me.DepartmentToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvItems = New System.Windows.Forms.DataGridView()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.chkbxCatagory = New System.Windows.Forms.CheckBox()
-        Me.chkbxDepartment = New System.Windows.Forms.CheckBox()
-        Me.cboCatagorySelect = New System.Windows.Forms.ComboBox()
-        Me.cboDepartmentSelect = New System.Windows.Forms.ComboBox()
         Me.UPCDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InventoryCountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PurchasePriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -53,7 +48,14 @@ Partial Class Form1
         Me.CatagoryIdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SaleObjectBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProjectDatabaseDataSet = New FinalProject.ProjectDatabaseDataSet()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.chkbxCatagory = New System.Windows.Forms.CheckBox()
+        Me.chkbxDepartment = New System.Windows.Forms.CheckBox()
+        Me.cboCatagorySelect = New System.Windows.Forms.ComboBox()
+        Me.cboDepartmentSelect = New System.Windows.Forms.ComboBox()
         Me.SaleObjectTableAdapter = New FinalProject.ProjectDatabaseDataSetTableAdapters.SaleObjectTableAdapter()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txtUPCSearch = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvItems, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SaleObjectBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -80,19 +82,19 @@ Partial Class Form1
         'ItemToolStripMenuItem
         '
         Me.ItemToolStripMenuItem.Name = "ItemToolStripMenuItem"
-        Me.ItemToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ItemToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.ItemToolStripMenuItem.Text = "Item"
         '
         'CatagoryToolStripMenuItem
         '
         Me.CatagoryToolStripMenuItem.Name = "CatagoryToolStripMenuItem"
-        Me.CatagoryToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CatagoryToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.CatagoryToolStripMenuItem.Text = "Catagory"
         '
         'DepartmentToolStripMenuItem
         '
         Me.DepartmentToolStripMenuItem.Name = "DepartmentToolStripMenuItem"
-        Me.DepartmentToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.DepartmentToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
         Me.DepartmentToolStripMenuItem.Text = "Department"
         '
         'EditToolStripMenuItem
@@ -169,51 +171,6 @@ Partial Class Form1
         Me.dgvItems.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgvItems.Size = New System.Drawing.Size(954, 482)
         Me.dgvItems.TabIndex = 2
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(990, 35)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(47, 13)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Filter By:"
-        '
-        'chkbxCatagory
-        '
-        Me.chkbxCatagory.AutoSize = True
-        Me.chkbxCatagory.Location = New System.Drawing.Point(993, 60)
-        Me.chkbxCatagory.Name = "chkbxCatagory"
-        Me.chkbxCatagory.Size = New System.Drawing.Size(68, 17)
-        Me.chkbxCatagory.TabIndex = 4
-        Me.chkbxCatagory.Text = "Catagory"
-        Me.chkbxCatagory.UseVisualStyleBackColor = True
-        '
-        'chkbxDepartment
-        '
-        Me.chkbxDepartment.AutoSize = True
-        Me.chkbxDepartment.Location = New System.Drawing.Point(993, 84)
-        Me.chkbxDepartment.Name = "chkbxDepartment"
-        Me.chkbxDepartment.Size = New System.Drawing.Size(81, 17)
-        Me.chkbxDepartment.TabIndex = 5
-        Me.chkbxDepartment.Text = "Department"
-        Me.chkbxDepartment.UseVisualStyleBackColor = True
-        '
-        'cboCatagorySelect
-        '
-        Me.cboCatagorySelect.FormattingEnabled = True
-        Me.cboCatagorySelect.Location = New System.Drawing.Point(1089, 60)
-        Me.cboCatagorySelect.Name = "cboCatagorySelect"
-        Me.cboCatagorySelect.Size = New System.Drawing.Size(65, 21)
-        Me.cboCatagorySelect.TabIndex = 6
-        '
-        'cboDepartmentSelect
-        '
-        Me.cboDepartmentSelect.FormattingEnabled = True
-        Me.cboDepartmentSelect.Location = New System.Drawing.Point(1089, 84)
-        Me.cboDepartmentSelect.Name = "cboDepartmentSelect"
-        Me.cboDepartmentSelect.Size = New System.Drawing.Size(65, 21)
-        Me.cboDepartmentSelect.TabIndex = 7
         '
         'UPCDataGridViewTextBoxColumn
         '
@@ -295,15 +252,78 @@ Partial Class Form1
         Me.ProjectDatabaseDataSet.DataSetName = "ProjectDatabaseDataSet"
         Me.ProjectDatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(990, 35)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(47, 13)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Filter By:"
+        '
+        'chkbxCatagory
+        '
+        Me.chkbxCatagory.AutoSize = True
+        Me.chkbxCatagory.Location = New System.Drawing.Point(993, 60)
+        Me.chkbxCatagory.Name = "chkbxCatagory"
+        Me.chkbxCatagory.Size = New System.Drawing.Size(68, 17)
+        Me.chkbxCatagory.TabIndex = 4
+        Me.chkbxCatagory.Text = "Catagory"
+        Me.chkbxCatagory.UseVisualStyleBackColor = True
+        '
+        'chkbxDepartment
+        '
+        Me.chkbxDepartment.AutoSize = True
+        Me.chkbxDepartment.Location = New System.Drawing.Point(993, 84)
+        Me.chkbxDepartment.Name = "chkbxDepartment"
+        Me.chkbxDepartment.Size = New System.Drawing.Size(81, 17)
+        Me.chkbxDepartment.TabIndex = 5
+        Me.chkbxDepartment.Text = "Department"
+        Me.chkbxDepartment.UseVisualStyleBackColor = True
+        '
+        'cboCatagorySelect
+        '
+        Me.cboCatagorySelect.FormattingEnabled = True
+        Me.cboCatagorySelect.Location = New System.Drawing.Point(1089, 60)
+        Me.cboCatagorySelect.Name = "cboCatagorySelect"
+        Me.cboCatagorySelect.Size = New System.Drawing.Size(65, 21)
+        Me.cboCatagorySelect.TabIndex = 6
+        '
+        'cboDepartmentSelect
+        '
+        Me.cboDepartmentSelect.FormattingEnabled = True
+        Me.cboDepartmentSelect.Location = New System.Drawing.Point(1089, 84)
+        Me.cboDepartmentSelect.Name = "cboDepartmentSelect"
+        Me.cboDepartmentSelect.Size = New System.Drawing.Size(65, 21)
+        Me.cboDepartmentSelect.TabIndex = 7
+        '
         'SaleObjectTableAdapter
         '
         Me.SaleObjectTableAdapter.ClearBeforeFill = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(993, 127)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(70, 13)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "Find By UPC:"
+        '
+        'txtUPCSearch
+        '
+        Me.txtUPCSearch.Location = New System.Drawing.Point(996, 143)
+        Me.txtUPCSearch.Name = "txtUPCSearch"
+        Me.txtUPCSearch.Size = New System.Drawing.Size(158, 20)
+        Me.txtUPCSearch.TabIndex = 9
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1283, 593)
+        Me.Controls.Add(Me.txtUPCSearch)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.cboDepartmentSelect)
         Me.Controls.Add(Me.cboCatagorySelect)
         Me.Controls.Add(Me.chkbxDepartment)
@@ -356,4 +376,6 @@ Partial Class Form1
     Friend WithEvents chkbxDepartment As CheckBox
     Friend WithEvents cboCatagorySelect As ComboBox
     Friend WithEvents cboDepartmentSelect As ComboBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents txtUPCSearch As TextBox
 End Class

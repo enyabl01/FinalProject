@@ -357,8 +357,6 @@ Partial Public Class ProjectDatabaseDataSet
         
         Private columnCatagoryName As Global.System.Data.DataColumn
         
-        Private columnDepartmentId As Global.System.Data.DataColumn
-        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -411,14 +409,6 @@ Partial Public Class ProjectDatabaseDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property DepartmentIdColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnDepartmentId
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -455,9 +445,9 @@ Partial Public Class ProjectDatabaseDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddCatagoryRow(ByVal CategoryId As Integer, ByVal CatagoryName As String, ByVal DepartmentId As Integer) As CatagoryRow
+        Public Overloads Function AddCatagoryRow(ByVal CategoryId As Integer, ByVal CatagoryName As String) As CatagoryRow
             Dim rowCatagoryRow As CatagoryRow = CType(Me.NewRow,CatagoryRow)
-            Dim columnValuesArray() As Object = New Object() {CategoryId, CatagoryName, DepartmentId}
+            Dim columnValuesArray() As Object = New Object() {CategoryId, CatagoryName}
             rowCatagoryRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowCatagoryRow)
             Return rowCatagoryRow
@@ -488,7 +478,6 @@ Partial Public Class ProjectDatabaseDataSet
         Friend Sub InitVars()
             Me.columnCategoryId = MyBase.Columns("CategoryId")
             Me.columnCatagoryName = MyBase.Columns("CatagoryName")
-            Me.columnDepartmentId = MyBase.Columns("DepartmentId")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -498,14 +487,11 @@ Partial Public Class ProjectDatabaseDataSet
             MyBase.Columns.Add(Me.columnCategoryId)
             Me.columnCatagoryName = New Global.System.Data.DataColumn("CatagoryName", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnCatagoryName)
-            Me.columnDepartmentId = New Global.System.Data.DataColumn("DepartmentId", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDepartmentId)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnCategoryId}, true))
             Me.columnCategoryId.AllowDBNull = false
             Me.columnCategoryId.Unique = true
             Me.columnCatagoryName.AllowDBNull = false
             Me.columnCatagoryName.MaxLength = 50
-            Me.columnDepartmentId.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1304,17 +1290,6 @@ Partial Public Class ProjectDatabaseDataSet
                 Me(Me.tableCatagory.CatagoryNameColumn) = value
             End Set
         End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property DepartmentId() As Integer
-            Get
-                Return CType(Me(Me.tableCatagory.DepartmentIdColumn),Integer)
-            End Get
-            Set
-                Me(Me.tableCatagory.DepartmentIdColumn) = value
-            End Set
-        End Property
     End Class
     
     '''<summary>
@@ -1731,17 +1706,14 @@ Namespace ProjectDatabaseDataSetTableAdapters
             tableMapping.DataSetTable = "Catagory"
             tableMapping.ColumnMappings.Add("CategoryId", "CategoryId")
             tableMapping.ColumnMappings.Add("CatagoryName", "CatagoryName")
-            tableMapping.ColumnMappings.Add("DepartmentId", "DepartmentId")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Catagory] WHERE (([CategoryId] = @Original_CategoryId) AND ([C"& _ 
-                "atagoryName] = @Original_CatagoryName) AND ([DepartmentId] = @Original_Departmen"& _ 
-                "tId))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [Catagory] WHERE (([CategoryId] = @Original_CategoryId) AND ([Catagor"& _ 
+                "yName] = @Original_CatagoryName))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CategoryId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CategoryId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CatagoryName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CatagoryName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DepartmentId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DepartmentId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
             Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Catagory] ([CategoryId], [CatagoryName], [DepartmentId]) VALUE"& _ 
@@ -1753,18 +1725,15 @@ Namespace ProjectDatabaseDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DepartmentId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DepartmentId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[Catagory] SET [CategoryId] = @CategoryId, [CatagoryName] = @Catagor"& _ 
-                "yName, [DepartmentId] = @DepartmentId WHERE (([CategoryId] = @Original_CategoryI"& _ 
-                "d) AND ([CatagoryName] = @Original_CatagoryName) AND ([DepartmentId] = @Original"& _ 
-                "_DepartmentId));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT CategoryId, CatagoryName, DepartmentId FROM Catagory WH"& _ 
-                "ERE (CategoryId = @CategoryId)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [Catagory] SET [CategoryId] = @CategoryId, [CatagoryName] = @CatagoryName "& _ 
+                "WHERE (([CategoryId] = @Original_CategoryId) AND ([CatagoryName] = @Original_Cat"& _ 
+                "agoryName));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT CategoryId, CatagoryName FROM Catagory WHERE (CategoryId = "& _ 
+                "@CategoryId)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CategoryId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CategoryId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CatagoryName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CatagoryName", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@DepartmentId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DepartmentId", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CategoryId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CategoryId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CatagoryName", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CatagoryName", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_DepartmentId", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "DepartmentId", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1780,7 +1749,7 @@ Namespace ProjectDatabaseDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT CategoryId, CatagoryName, DepartmentId FROM dbo.Catagory"
+            Me._commandCollection(0).CommandText = "SELECT CategoryId, CatagoryName FROM Catagory"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -1840,14 +1809,13 @@ Namespace ProjectDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_CategoryId As Integer, ByVal Original_CatagoryName As String, ByVal Original_DepartmentId As Integer) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_CategoryId As Integer, ByVal Original_CatagoryName As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_CategoryId,Integer)
             If (Original_CatagoryName Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_CatagoryName")
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_CatagoryName,String)
             End If
-            Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_DepartmentId,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1894,21 +1862,19 @@ Namespace ProjectDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal CategoryId As Integer, ByVal CatagoryName As String, ByVal DepartmentId As Integer, ByVal Original_CategoryId As Integer, ByVal Original_CatagoryName As String, ByVal Original_DepartmentId As Integer) As Integer
+        Public Overloads Overridable Function Update(ByVal CategoryId As Integer, ByVal CatagoryName As String, ByVal Original_CategoryId As Integer, ByVal Original_CatagoryName As String) As Integer
             Me.Adapter.UpdateCommand.Parameters(0).Value = CType(CategoryId,Integer)
             If (CatagoryName Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("CatagoryName")
             Else
                 Me.Adapter.UpdateCommand.Parameters(1).Value = CType(CatagoryName,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(DepartmentId,Integer)
-            Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_CategoryId,Integer)
+            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_CategoryId,Integer)
             If (Original_CatagoryName Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_CatagoryName")
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_CatagoryName,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(Original_CatagoryName,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_DepartmentId,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -1928,8 +1894,8 @@ Namespace ProjectDatabaseDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal CatagoryName As String, ByVal DepartmentId As Integer, ByVal Original_CategoryId As Integer, ByVal Original_CatagoryName As String, ByVal Original_DepartmentId As Integer) As Integer
-            Return Me.Update(Original_CategoryId, CatagoryName, DepartmentId, Original_CategoryId, Original_CatagoryName, Original_DepartmentId)
+        Public Overloads Overridable Function Update(ByVal CatagoryName As String, ByVal Original_CategoryId As Integer, ByVal Original_CatagoryName As String) As Integer
+            Return Me.Update(Original_CategoryId, CatagoryName, Original_CategoryId, Original_CatagoryName)
         End Function
     End Class
     
