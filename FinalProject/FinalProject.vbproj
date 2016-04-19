@@ -87,6 +87,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCatagory.Designer.vb">
+      <DependentUpon>AddCatagory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddCatagory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddDepartment.Designer.vb">
+      <DependentUpon>AddDepartment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AddDepartment.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AddItem.Designer.vb">
       <DependentUpon>AddItem.vb</DependentUpon>
     </Compile>
@@ -100,6 +112,7 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ItemObject.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -123,8 +136,22 @@
     <Compile Include="ProjectDatabaseDataSet.vb">
       <DependentUpon>ProjectDatabaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ProjectDatabaseDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProjectDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AddCatagory.resx">
+      <DependentUpon>AddCatagory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddDepartment.resx">
+      <DependentUpon>AddDepartment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddItem.resx">
+      <DependentUpon>AddItem.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -151,8 +178,8 @@
     </None>
     <None Include="ProjectDatabaseDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>ProjectDatabaseDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>ProjectDatabaseDataSet1.Designer.vb</LastGenOutput>
     </None>
     <None Include="ProjectDatabaseDataSet.xss">
       <DependentUpon>ProjectDatabaseDataSet.xsd</DependentUpon>

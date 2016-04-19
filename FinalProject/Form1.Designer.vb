@@ -56,6 +56,7 @@ Partial Class Form1
         Me.SaleObjectTableAdapter = New FinalProject.ProjectDatabaseDataSetTableAdapters.SaleObjectTableAdapter()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txtUPCSearch = New System.Windows.Forms.TextBox()
+        Me.btnFind = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.dgvItems, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SaleObjectBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,19 +83,19 @@ Partial Class Form1
         'ItemToolStripMenuItem
         '
         Me.ItemToolStripMenuItem.Name = "ItemToolStripMenuItem"
-        Me.ItemToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
+        Me.ItemToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ItemToolStripMenuItem.Text = "Item"
         '
         'CatagoryToolStripMenuItem
         '
         Me.CatagoryToolStripMenuItem.Name = "CatagoryToolStripMenuItem"
-        Me.CatagoryToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
+        Me.CatagoryToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.CatagoryToolStripMenuItem.Text = "Catagory"
         '
         'DepartmentToolStripMenuItem
         '
         Me.DepartmentToolStripMenuItem.Name = "DepartmentToolStripMenuItem"
-        Me.DepartmentToolStripMenuItem.Size = New System.Drawing.Size(137, 22)
+        Me.DepartmentToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.DepartmentToolStripMenuItem.Text = "Department"
         '
         'EditToolStripMenuItem
@@ -304,7 +305,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(993, 127)
+        Me.Label3.Location = New System.Drawing.Point(990, 127)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(70, 13)
         Me.Label3.TabIndex = 8
@@ -312,16 +313,26 @@ Partial Class Form1
         '
         'txtUPCSearch
         '
-        Me.txtUPCSearch.Location = New System.Drawing.Point(996, 143)
+        Me.txtUPCSearch.Location = New System.Drawing.Point(993, 143)
         Me.txtUPCSearch.Name = "txtUPCSearch"
         Me.txtUPCSearch.Size = New System.Drawing.Size(158, 20)
         Me.txtUPCSearch.TabIndex = 9
+        '
+        'btnFind
+        '
+        Me.btnFind.Location = New System.Drawing.Point(993, 180)
+        Me.btnFind.Name = "btnFind"
+        Me.btnFind.Size = New System.Drawing.Size(75, 23)
+        Me.btnFind.TabIndex = 10
+        Me.btnFind.Text = "Find"
+        Me.btnFind.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1283, 593)
+        Me.Controls.Add(Me.btnFind)
         Me.Controls.Add(Me.txtUPCSearch)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.cboDepartmentSelect)
@@ -378,4 +389,5 @@ Partial Class Form1
     Friend WithEvents cboDepartmentSelect As ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents txtUPCSearch As TextBox
+    Friend WithEvents btnFind As Button
 End Class
